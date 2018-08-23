@@ -36,7 +36,7 @@ public class RestService {
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 		int responseCode = con.getResponseCode();
 		if (responseCode!=200) {
-			return "";
+			return Integer.toString(responseCode);
 		}
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
