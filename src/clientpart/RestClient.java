@@ -9,7 +9,7 @@ import com.sun.jersey.api.client.config.*;
 public class RestClient {
 	private WebResource webResource;
 	private Client client;
-	private static final String BASE_URI = "http://localhost:8080/WebServiceFilmRate_Server/rest";
+	private static final String BASE_URI = "http://localhost:8080/Service_address_xml_to_json/rest";
 		
 	public RestClient() {
 		client = Client.create(new DefaultClientConfig());
@@ -18,7 +18,7 @@ public class RestClient {
 	
 	public String getAddressJson(String address) throws UniformInterfaceException {
 		WebResource resource = webResource;		
-		resource = resource.path(MessageFormat.format("conAdress/{0}", new Object[] {address}));	
+		resource = resource.path(MessageFormat.format("conAddress/{0}", new Object[] {address}));	
 		return resource.accept(MediaType.APPLICATION_JSON).get(String.class);	
 	}	
 		

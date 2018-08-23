@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="Service_adress_xml_to_json">
+    <wb-module deploy-name="Service_address_xml_to_json">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Service_adress_xml_to_json"/>
-        <property name="java-output-path" value="/Service_adress_xml_to_json/build/classes"/>
+        <property name="java-output-path" value="/Service_address_xml_to_json/build/classes"/>
+        <property name="context-root" value="Service_address_xml_to_json"/>
     </wb-module>
 </project-modules>

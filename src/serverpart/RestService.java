@@ -17,21 +17,16 @@ import org.json.XML;
 public class RestService {
 
 	@GET
-	@Path("conAdress/{address}")
+	@Path("conAddress/{address}")
 	@Produces (MediaType.APPLICATION_JSON)
 	
 	
-	public String conAdress(@PathParam("address") String address) {
-		try {
+	public String conAddress(@PathParam("address") String address) throws IOException {
+
 			String TextXml = getResponse(address);			
 			String JsonStr = convert(TextXml);
 			return JsonStr;
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
 		
-		;
-		return null;
 	}
 	
 	public String getResponse(String address) throws IOException {
@@ -45,16 +40,17 @@ public class RestService {
 		}
 		BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 		String inputLine;
-		StringBuffer responce = new StringBuffer();
+		StringBuffer response = new StringBuffer();
 		while ((inputLine = in.readLine()) != null) {
-			responce.append(inputLine);
+			response.append(inputLine);
 		}
 		in.close();
-		String StrXml = responce.toString();
+		String StrXml = response.toString();
 		return StrXml;
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
+	
 		return "";	
 	}
 	
